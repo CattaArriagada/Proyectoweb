@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="avance_fisico.list">
+      <field name="name">avance_fisico list</field>
+      <field name="model">avance_fisico.avance_fisico</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="avance_fisico.action_window">
+      <field name="name">avance_fisico window</field>
+      <field name="res_model">avance_fisico.avance_fisico</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="avance_fisico.action_server">
+      <field name="name">avance_fisico server</field>
+      <field name="model_id" ref="model_avance_fisico_avance_fisico"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="avance_fisico" id="avance_fisico.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="avance_fisico.menu_1" parent="avance_fisico.menu_root"/>
+    <menuitem name="Menu 2" id="avance_fisico.menu_2" parent="avance_fisico.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="avance_fisico.menu_1_list" parent="avance_fisico.menu_1"
+              action="avance_fisico.action_window"/>
+    <menuitem name="Server to list" id="avance_fisico" parent="avance_fisico.menu_2"
+              action="avance_fisico.action_server"/>
+    -->
+  </data>
+</odoo>
