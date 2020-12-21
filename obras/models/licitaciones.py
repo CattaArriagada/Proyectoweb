@@ -48,3 +48,15 @@ class Material(models.Model):
 
 # LISTO
 #otro intento
+class Cliente(models.Model):
+        _name = 'obras.clientes'
+        _rec_name = 'name'
+
+        name = fields.Char(string='Nombre empresa', required=True)
+        run_empresa = fields.Char("RUT Empresa", required=True)
+        email = fields.Char(string='Correo Electronico')
+        phone = fields.Integer(string='Telefono')
+        giro = fields.Char(String='Giro', required=True)
+        
+        licitacion_ids = fields.One2many('obras.licitaciones','cliente_id', string='Detalle Licitacion')
+        avance_ids = fields.Many2one('avance_fisico.cobros', string='Avance Fisico')
