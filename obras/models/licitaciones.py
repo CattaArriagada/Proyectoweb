@@ -60,3 +60,18 @@ class Cliente(models.Model):
         
         #licitacion_ids = fields.One2many('obras.licitaciones','cliente_id', string='Detalle Licitacion')
         #avance_ids = fields.Many2one('avance_fisico.cobros', string='Avance Fisico')
+
+class Licitacione(models.Model):
+        _name = 'obras.licitaciones' 
+
+        name = fields.Char(string='Nombre Obra', required=True)
+        fechaInicio = fields.Date('Fecha de inicio')
+        fechaTermino = fields.Date('Fecha de Termino')
+        detalleObra = fields.Text(string='Observación de la obra')
+        
+        presupuesto_id = fields.Many2one('obras.presupuesto', string='Presupuesto')
+        
+        cliente_id = fields.Many2one('obras.clientes', string='Cliente')
+
+        avance_ids = fields.One2many('avance_fisico.avance_licitacion','licitacion_avance_id',string='Avance Fisico')
+        #orden_compra_ids = fields.One2many('orden_compra.orden_compras', 'licitacion_id', string='N Orden')
