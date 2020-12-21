@@ -1,0 +1,69 @@
+<odoo>
+    <data>
+        <!-- Lista de obras -->
+        <record model="ir.ui.view" id="obras.clientes_list">
+            <field name="name">Cliente</field>
+            <field name="model">obras.clientes</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="run_empresa"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="giro"/>
+                    <field name="avance_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Formulario  -->
+        <record id="obras.clientes_view" model="ir.ui.view">
+            <field name="name">Clientes</field>
+            <field name="model">obras.clientes</field>
+            <field name="arch" type="xml">
+                <form string="Clientes">
+                    <sheet>
+                        <Separator string="General"/>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="run_empresa"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="giro"/>
+                        </group>
+                        <Separator string="Licitacion y Avance"/>
+                        <group>
+                            <field name="licitacion_ids"/>
+                            <field name="avance_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="obras.clientes_action_window">
+            <field name="name">Lista de Clientes</field>
+            <field name="res_model">obras.clientes</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- server action to the one above -->
+        <record model="ir.actions.server" id="obras.clientes_action_server">
+            <field name="name">Clientes server</field>
+            <field name="model_id" ref="model_obras_clientes"/>
+            <field name="state">code</field>
+            <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+            </field>
+        </record>
+        <!-- Top menu item -->
+        <menuitem name="Obras" id="obras.menu_root"/>
+        <!-- actions -->
+        <menuitem name="Cliente" id="obras.menu_clientes" parent="obras.menu_root" action="obras.clientes_action_window"/>
+    </data>
+</odoo>
