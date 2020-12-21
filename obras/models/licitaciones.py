@@ -58,5 +58,5 @@ class Cliente(models.Model):
         phone = fields.Integer(string='Telefono')
         giro = fields.Char(String='Giro', required=True)
         
-        licitacion_ids = fields.One2many('obras.licitaciones','cliente_id', string='Detalle Licitacion')
-        avance_ids = fields.Many2one('avance_fisico.cobros', string='Avance Fisico')
+        #licitacion_ids = fields.One2many('obras.licitaciones','cliente_id', string='Detalle Licitacion')
+        #avance_ids = fields.Many2one('avance_fisico.cobros', string='Avance Fisico')
