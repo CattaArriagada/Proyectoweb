@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_orden_compra_orden_compra,orden_compra.orden_compra,model_orden_compra_orden_compra,,1,0,0,0
+access_orden_compra_orden_compras,orden_compra.orden_compras,model_orden_compra_orden_compras,,1,1,1,1
+access_orden_compra_proveedores,orden_compra.proveedores,model_orden_compra_proveedores,,1,1,1,1
+access_orden_compra_detalle_orden,orden_compra.detalle_orden,model_orden_compra_detalle_orden,,1,1,1,1
