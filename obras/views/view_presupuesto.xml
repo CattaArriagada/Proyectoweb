@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+        <!-- Lista de Presupuesto -->
+        <record model="ir.ui.view" id="obras.presupuesto_list">
+            <field name="name">Presupuesto</field>
+            <field name="model">obras.presupuesto</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="fecha"/>
+                    <!-- <field name="licitacion_ids"/> -->
+                    <field name="detalle"/>
+                    <!-- <field name="total"/> -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Formulario  -->
+        <record id="obras.presupuesto_view" model="ir.ui.view">
+            <field name="name">Presupuesto</field>
+            <field name="model">obras.presupuesto</field>
+            <field name="arch" type="xml">
+                <form string="Presupuesto">
+                    <sheet>
+                        <Separator string="General"/>
+                        <group col="3">
+                            <field name="name"/>
+                            <field name="fecha"/>
+                            <field name="detalle"/>
+                        </group>
+                        <Separator string="Material"/>
+                        <!-- preguntar algo -->
+                        <group>
+                            <field name="detalle_presupuesto_material_ids" nolabel="1">
+                                <tree string="Materiales" editable="bottom">
+                                    <field name="materiales_d_id" editable="bottom"/>
+                                    <field name="cost"/>
+                                    <field name="cantidad"/>
+                                    <field name="sub_total" sum='Total'/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="obras.presupuesto_action_window">
+            <field name="name">Presupuesto</field>
+            <field name="res_model">obras.presupuesto</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- server action to the one above -->
+        <record model="ir.actions.server" id="obras.presupuesto_action_server">
+            <field name="name">Presupuesto server</field>
+            <field name="model_id" ref="model_obras_presupuesto"/>
+            <field name="state">code</field>
+            <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+            </field>
+        </record>
+
+        <!-- Top menu item -->
+        <menuitem name="Obras" id="obras.menu_root"/>
+        <!-- actions -->
+        <menuitem name="Presupuesto" id="obras.menu_presupuesto" parent="obras.menu_root" action="obras.presupuesto_action_window"/>
+    </data>
+</odoo>
