@@ -1,2 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_obras_obras,obras.obras,model_obras_obras,,1,0,0,0
+access_obras_licitaciones,obras.licitaciones,model_obras_licitaciones,,1,1,1,1
+access_obras_presupuesto,obras.presupuesto,model_obras_presupuesto,,1,1,1,1
+access_obras_detalle_presupuesto,obras.detalle_presupuesto,model_obras_detalle_presupuesto,,1,1,1,1
+access_obras_materiales,obras.materiales,model_obras_materiales,,1,1,1,1
+access_obras_clientes,obras.clientes,model_obras_clientes,,1,1,1,1
