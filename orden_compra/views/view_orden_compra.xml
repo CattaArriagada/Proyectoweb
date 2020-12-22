@@ -1,0 +1,74 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="orden_compra.orden_compras_list">
+      <field name="name">Orden de Compra</field>
+      <field name="model">orden_compra.orden_compras</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <!-- <field name="licitacion_id"/> -->
+          <!-- <field name="monto_total"/> -->
+          <field name="observacion"/>
+          <!-- <field name="proveedor_ids"/> -->
+        </tree>
+      </field>
+    </record>
+
+    <!-- Formulario  -->
+    <record id="orden_compra.orden_compras_view" model="ir.ui.view">
+      <field name="name">Orden de Compra</field>
+      <field name="model">orden_compra.orden_compras</field>
+      <field name="arch" type="xml">
+        <form string="Orden Compra">
+          <sheet>
+            <group col="4">
+              <field name="name"/>
+              <!-- <field name="licitacion_id"/> -->
+            </group>
+            <group>
+              <field name="observacion"/>
+              <!-- <field name="proveedor_ids"/> -->
+            </group>
+            <!-- <group>
+              <field name="detalle_orden_ids" nolabel="1">
+                <tree string="Materiales" editable="bottom">
+                  <field name="materiales_o_id" editable="bottom"/>
+                  <field name="cost"/>
+                  <field name="cantidad"/>
+                  <field name="sub_total" sum='Total'/>
+                </tree>
+              </field>
+            </group> -->
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="orden_compra.orden_compras_action_window">
+      <field name="name">Orden Compra</field>
+      <field name="res_model">orden_compra.orden_compras</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <record model="ir.actions.server" id="orden_compra.orden_compras_action_server">
+      <field name="name">orden_compras server</field>
+      <field name="model_id" ref="model_orden_compra_orden_compras"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Orden De Compra" id="orden_compra.menu_root"/>
+    <!-- actions -->
+    <menuitem name="Lista Orden de Compras" id="orden_compra.menu_orden_compras" parent="orden_compra.menu_root" action="orden_compra.orden_compras_action_window"/>
+  </data>
+</odoo>
