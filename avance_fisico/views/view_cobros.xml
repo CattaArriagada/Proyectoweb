@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="avance_fisico.cobros_list">
+            <field name="name">Avance Fisico</field>
+            <field name="model">avance_fisico.cobros</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="fecha_cobro"/>
+                    <field name="name"/>
+                    <!-- <field name="cliente_ids"/> -->
+                    <field name="detalle_cobro"/>
+                    <field name="costo" sum='Total'/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Formulario  -->
+        <record id="avance_fisico.cobros_view" model="ir.ui.view">
+            <field name="name">Avance Cobros</field>
+            <field name="model">avance_fisico.cobros</field>
+            <field name="arch" type="xml">
+                <form string="Generar Cobros">
+                    <sheet>
+                        <Separator string="General"/>
+                        <group col="4">
+                            <field name="fecha_cobro"/>
+                            <field name="name"/>
+                            <!-- <field name="avance_id"/> -->
+                        </group>
+                        <Separator string="Detalle del Cobro"/>
+                        <group>
+                            <!-- <field name="cliente_ids"/> -->
+                            <field name="detalle_cobro"/>
+                            <field name="costo"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="avance_fisico.cobros_action_window">
+            <field name="name">Lista de Cobros</field>
+            <field name="res_model">avance_fisico.cobros</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- server action to the one above -->
+
+        <record model="ir.actions.server" id="avance_fisico.cobros_action_server">
+            <field name="name">cobros server</field>
+            <field name="model_id" ref="model_avance_fisico_cobros"/>
+            <field name="state">code</field>
+            <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+            </field>
+        </record>
+
+
+        <!-- Top menu item -->
+
+        <menuitem name="Avance Fisico" id="avance_fisico.menu_root"/>
+        <!-- actions -->
+        <menuitem name="Cobros" id="avance_fisico.menu_cobros" parent="avance_fisico.menu_root" action="avance_fisico.cobros_action_window"/>
+    </data>
+</odoo>
