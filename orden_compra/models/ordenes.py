@@ -34,3 +34,16 @@ class Detalle_Orden_Material(models.Model):
         @api.one
         def _subtotal(self):
                self.sub_total=self.cost*self.cantidad
+
+class Proveedores(models.Model):
+        _name = 'orden_compra.proveedores'
+
+        name = fields.Char(string='Codigo del Proveedor', required=True)
+
+        nombre = fields.Char(string='Nombre del proveedor')
+        rut = fields.Char(string='RUT')
+        telefono = fields.Integer('Numero de telefono')
+        correo = fields.Char(string='Correo Electronico')
+
+        ordenes_ids = fields.Many2one('orden_compra.orden_compras', string='Numero de orden')
+        cobro_ids = fields.Many2many('avance_fisico.avance_licitacion', string='Lista Licitacion')
