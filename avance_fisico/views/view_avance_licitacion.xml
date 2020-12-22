@@ -15,5 +15,42 @@
                 </tree>
             </field>
         </record>
+
+    <!-- Formulario  -->
+        <record id="avance_fisico.avance_licitacion_view" model="ir.ui.view">
+            <field name="name">Avance Licitacion</field>
+            <field name="model">avance_fisico.avance_licitacion</field>
+            <field name="arch" type="xml">
+                <form string="Generar Avance">
+                    <sheet>
+                        <Separator string="General"/>
+                        <group col="4">
+                            <field name="fecha_avance"/>
+                            <field name="name"/>
+                            <field name="licitacion_avance_id"/>
+                        </group>
+                        <Separator string="Detalle del Avance"/>
+                        <group>
+                            <field name="detalle_avance"/>
+                            <field name="observacion"/>
+                        </group>
+                        <group>
+                            <field name="cobro_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="avance_fisico.avance_licitacion_action_window">
+            <field name="name">Lista de Avances</field>
+            <field name="res_model">avance_fisico.avance_licitacion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
     </data>
 </odoo>
