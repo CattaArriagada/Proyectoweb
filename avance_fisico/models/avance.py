@@ -15,3 +15,20 @@ class AvanceLicitacion(models.Model):
 
         #relaciones out
         licitacion_avance_id = fields.Many2one('obras.licitaciones', string='Obra')
+
+class Cobros(models.Model):
+    _name = 'avance_fisico.cobros'
+
+    name = fields.Char(string='Cobro', required=True)
+
+    fecha_cobro = fields.Date('Fecha cobro')
+    detalle_cobro = fields.Text('Detalle del Cobro')
+    costo = fields.Integer(string='Costo')
+
+    #relaciones out
+    #avance_id = fields.Many2one('avance_fisico.avance_licitacion')
+
+    #relaciones in
+    #cliente_ids = fields.Many2one('obras.clientes', string='Cliente Asociado')
+    #materia_l_ids = fields.One2many('obras.materiales','sub_total', string='Monto del cobro')
+
