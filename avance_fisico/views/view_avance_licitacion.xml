@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="avance_fisico.avance_licitacion_list">
+            <field name="name">Avance Fisico</field>
+            <field name="model">avance_fisico.avance_licitacion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="fecha_avance"/>
+                    <field name="name"/>
+                    <!-- <field name="avance_licitacion_ids"/> -->
+                    <field name="detalle_avance"/>
+                    <field name="observacion"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
