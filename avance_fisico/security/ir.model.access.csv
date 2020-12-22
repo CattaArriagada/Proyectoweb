@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_avance_fisico_avance_fisico,avance_fisico.avance_fisico,model_avance_fisico_avance_fisico,,1,0,0,0
+access_avance_fisico_avance_licitacion,avance_fisico.avance_licitacion,model_avance_fisico_avance_licitacion,,1,1,1,1
+access_avance_fisico_cobros,avance_fisico.cobros,model_avance_fisico_cobros,,1,1,1,1
