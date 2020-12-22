@@ -1,0 +1,66 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="orden_compra.proveedores_list">
+      <field name="name">Orden de Compra</field>
+      <field name="model">orden_compra.proveedores</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="rut"/>
+          <field name="telefono"/>
+          <field name="correo"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Formulario  -->
+    <record id="orden_compra.proveedores_view" model="ir.ui.view">
+        <field name="name">Proveedor</field>
+        <field name="model">orden_compra.proveedores</field>
+        <field name="arch" type="xml">
+            <form string="Proveedor">
+                <sheet>
+                <group col="4">
+                    <field name="name"/>
+                    <field name="nombre"/>
+                    <field name="rut"/>
+                </group>
+                <group>                   
+                    <field name="telefono"/>
+                    <field name="correo"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+ 
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="orden_compra.proveedores_action_window">
+      <field name="name">Proveedor</field>
+      <field name="res_model">orden_compra.proveedores</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <record model="ir.actions.server" id="orden_compra.proveedores_action_server">
+      <field name="name">proveedores server</field>
+      <field name="model_id" ref="model_orden_compra_proveedores"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Orden De Compra" id="orden_compra.menu_root"/>
+    <!-- actions -->
+    <menuitem name="Lista Proveedores" id="orden_compra.menu_proveedores" parent="orden_compra.menu_root"
+              action="orden_compra.proveedores_action_window"/>
+  </data>
+</odoo>
