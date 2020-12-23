@@ -12,10 +12,10 @@ class OrdenDeCompra(models.Model):
         observacion = fields.Text(string='Observacion')
 
         #relaciones in
-        #proveedor_ids = fields.Many2one('orden_compra.proveedores',string='Proveedor asocido')
+        proveedor_ids = fields.Many2one('orden_compra.proveedores',string='Proveedor asocido')
         #relaciones out
 
-        #detalle_orden_ids=fields.One2many('orden_compra.detalle_orden','orden_c_id')
+        detalle_orden_ids=fields.One2many('orden_compra.detalle_orden','orden_c_id')
 
 class Detalle_Orden_Material(models.Model):
         _name = 'orden_compra.detalle_orden'
@@ -27,9 +27,9 @@ class Detalle_Orden_Material(models.Model):
         sub_total = fields.Integer(string='Total', compute='_subtotal')
 
         #relaciones out
-        #materiales_o_id = fields.Many2one('obras.materiales', string='Material')
+        materiales_o_id = fields.Many2one('obras.materiales', string='Material')
         #relaciones in
-        #orden_c_id =fields.Many2one('orden_compra.orden_compras')
+        orden_c_id =fields.Many2one('orden_compra.orden_compras')
 
         @api.one
         def _subtotal(self):
@@ -45,5 +45,5 @@ class Proveedores(models.Model):
         telefono = fields.Integer('Numero de telefono')
         correo = fields.Char(string='Correo Electronico')
 
-        #ordenes_ids = fields.Many2one('orden_compra.orden_compras', string='Numero de orden')
-        #cobro_ids = fields.Many2many('avance_fisico.avance_licitacion', string='Lista Licitacion')
+        ordenes_ids = fields.Many2one('orden_compra.orden_compras', string='Numero de orden')
+        cobro_ids = fields.Many2many('avance_fisico.avance_licitacion', string='Lista Licitacion')
