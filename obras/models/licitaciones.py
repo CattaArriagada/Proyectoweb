@@ -52,12 +52,12 @@ class Cliente(models.Model):
 
         name = fields.Char(string='Nombre empresa', required=True)
         run_empresa = fields.Char("RUT Empresa", required=True)
-        email = fields.Char(string='Correo Electronico')
-        phone = fields.Integer(string='Telefono')
+        email = fields.Char(string='Correo Electrónico')
+        phone = fields.Integer(string='Teléfono')
         giro = fields.Char(String='Giro', required=True)
         
-        #licitacion_ids = fields.One2many('obras.licitaciones','cliente_id', string='Detalle Licitacion')
-        #avance_ids = fields.Many2one('avance_fisico.cobros', string='Cobros')
+        licitacion_ids = fields.One2many('obras.licitaciones','cliente_id', string='Detalle Licitacion')
+        avance_ids = fields.One2many('avance_fisico.cobros', 'avance_id', string='Cobros')
 
 class Licitacione(models.Model):
         _name = 'obras.licitaciones' 
