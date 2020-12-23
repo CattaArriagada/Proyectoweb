@@ -55,7 +55,7 @@ class Cliente(models.Model):
         giro = fields.Char(String='Giro', required=True)
         
         licitacion_ids = fields.One2many('obras.licitaciones','cliente_id', string='Detalle Licitacion')
-        avance_ids = fields.One2many('avance_fisico.cobros', 'avance_id', string='Cobros')
+        #avance_ids = fields.One2many('avance_fisico.cobros', 'avance_id', string='Cobros')
 
 class Licitacione(models.Model):
         _name = 'obras.licitaciones' 
