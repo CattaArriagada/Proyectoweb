@@ -6,12 +6,7 @@
             <field name="model">obras.materiales</field>
             <field name="arch" type="xml">
                 <tree>
-                    <!-- <field name="codigo"/> -->
                     <field name="name"/>
-                    <!-- <field name="cost"/>
-                    <field name="cantidad"/>
-                    <field name="sub_total"/> -->
-                    <!-- <field name="presupuesto_ids"/> -->
                 </tree>
             </field>
         </record>
@@ -24,7 +19,6 @@
                 <form string="Material">
                     <sheet>
                         <group col="4">
-                            <!-- <field name="codigo"/> -->
                             <field name="name"/>
                         </group>
                     </sheet>
