@@ -26,13 +26,13 @@
                             <field name="name"/>
                         </group>
                         <Separator string="Lista de Materiales"/>
-                        <!-- <group>
+                        <group>
                             <field name="materiales_o_id" nolabel="1">
                                 <tree string="Materiales" editable="bottom">
-                                     <field name="name" editable='bottom'/>
+                                    <field name="name" editable='bottom'/> 
                                 </tree>
                             </field>
-                        </group> -->
+                        </group>
                         <group>
                             <field name="cost"/>
                             <field name="cantidad"/>
