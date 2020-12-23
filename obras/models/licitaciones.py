@@ -37,18 +37,15 @@ class Material(models.Model):
         _name = 'obras.materiales'
 
         name = fields.Char(string='Nombre Producto', required=True)
-        #codigo = fields.Integer(string='Codigo', required=True)
         
         #relacion in
         detalle_presupuesto_material_ids = fields.One2many('obras.detalle_presupuesto','materiales_d_id')
+       
         #relacion out
-        detalle_orden_ids = fields.One2many('orden_compra.detalle_orden','materiales_o_id')
-        #estamos tocando
+        detalle_orden_id = fields.Many2one('orden_compra.detalle_orden')
+        
         #cobros_id = fields.Many2one('avance_fisico.cobros', string='cobro')
-        #costo 
 
-# LISTO
-#otro intento
 class Cliente(models.Model):
         _name = 'obras.clientes'
         _rec_name = 'name'
