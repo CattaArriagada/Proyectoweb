@@ -29,5 +29,5 @@ class Cobros(models.Model):
     #avance_id = fields.Many2one('avance_fisico.avance_licitacion')
 
     #relaciones in
-    cliente_ids = fields.Many2one('obras.clientes', string='Cliente Asociado')
+    cliente_id = fields.Many2one('obras.clientes', string='Cliente Asociado')
 
