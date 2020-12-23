@@ -3,14 +3,14 @@
     'name': "orden_compra",
 
     'summary': """
-        Orden compra, Detalle orden Proveedores""",
+        Orden compra, Detalle orden, Proveedores""",
 
     'description': """
         Modulo de orden compra que realiza la gestion de una orden
     """,
 
     'author': "Alvaro Caceres",
-    'website': "http://www.ContructoraCallesita.com",
+    'website': "http://www.ContructoraCallecita.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
