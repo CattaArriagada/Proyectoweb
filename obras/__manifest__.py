@@ -23,12 +23,12 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
-    ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
+        'security/ir.model.access.csv',
+        'views/view_licitaciones.xml',
+        'views/view_presupuesto.xml',
+        #'views/view_detalle_presupuesto_materiales.xml',
+        'views/view_cliente.xml',
+        'views/view_materiales.xml',
+        #'views/templates.xml',
     ],
 }
