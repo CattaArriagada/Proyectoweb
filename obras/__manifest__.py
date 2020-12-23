@@ -10,7 +10,7 @@
     """,
 
     'author': "Catalina Arriagada",
-    'website': "http://www.LaCallecita.com",
+    'website': "http://www.ConstructoraLaCallecita.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
