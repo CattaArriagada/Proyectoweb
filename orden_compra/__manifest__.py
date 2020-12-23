@@ -3,7 +3,7 @@
     'name': "orden_compra",
 
     'summary': """
-        Orden compra Detalle orden Proveedores""",
+        Orden compra, Detalle orden Proveedores""",
 
     'description': """
         Modulo de orden compra que realiza la gestion de una orden
