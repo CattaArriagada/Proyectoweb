@@ -29,7 +29,7 @@
                     <field name="fechaInicio"/>
                     <field name="fechaTermino"/>
                 </group>
-                <Separator string="Presupuesto y observación de la Obra"/>
+                <Separator string="Presupuesto y observación de la obra"/>
                 <group>                   
                     <field name="presupuesto_id"/>
                     <field name="detalleObra"/>
