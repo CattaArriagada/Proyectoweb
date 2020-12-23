@@ -14,7 +14,6 @@ class Presupuesto(models.Model):
         detalle_presupuesto_material_ids = fields.One2many('obras.detalle_presupuesto','presupuesto_d_id')
         #orden_ids = fields.Many2many('orden_compra.orden_compras', string="Orden de compra")
 
-#Avanzar codigo de producto a presupuesto
 class Detalle_presupuesto_materiales(models.Model):
 
         _name = "obras.detalle_presupuesto"
@@ -44,7 +43,6 @@ class Material(models.Model):
         #relacion out
         detalle_orden_id = fields.Many2one('orden_compra.detalle_orden')
         
-        #cobros_id = fields.Many2one('avance_fisico.cobros', string='cobro')
 
 class Cliente(models.Model):
         _name = 'obras.clientes'
@@ -62,14 +60,14 @@ class Cliente(models.Model):
 class Licitacione(models.Model):
         _name = 'obras.licitaciones' 
 
-        name = fields.Char(string='Nombre Obra', required=True)
+        name = fields.Char(string='Nombre de obra', required=True)
         fechaInicio = fields.Date('Fecha de inicio')
         fechaTermino = fields.Date('Fecha de Termino')
         detalleObra = fields.Text(string='Observación de la obra')
         
-        #presupuesto_id = fields.Many2one('obras.presupuesto', string='Presupuesto')
+        presupuesto_id = fields.Many2one('obras.presupuesto', string='Presupuesto')
         
-        #cliente_id = fields.Many2one('obras.clientes', string='Cliente')
+        cliente_id = fields.Many2one('obras.clientes', string='Cliente')
 
-        #avance_ids = fields.One2many('avance_fisico.avance_licitacion','licitacion_avance_id',string='Avance Fisico')
+        avance_ids = fields.One2many('avance_fisico.avance_licitacion','licitacion_avance_id',string='Avance Fisico')
         #orden_compra_ids = fields.One2many('orden_compra.orden_compras', 'licitacion_id', string='N Orden')
