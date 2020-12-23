@@ -34,7 +34,16 @@
                         <Separator string="Licitacion y Avance"/>
                         <group>
                             <field name="licitacion_ids"/>
-                            <field name="avance_ids"/>
+                        </group>
+                        <group>
+                            <field name="avance_ids">
+                                <tree string="Cobros" editable="bottom">
+                                    <field name="fecha_cobro" editable="bottom"/>
+                                    <field name="name"/>
+                                    <field name="detalle_cobro"/>
+                                    <field name="costo" sum='Total'/>
+                                </tree>
+                            </field>
                         </group>
                     </sheet>
                 </form>
