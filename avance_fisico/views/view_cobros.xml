@@ -9,7 +9,6 @@
                 <tree>
                     <field name="fecha_cobro"/>
                     <field name="name"/>
-                    <!-- <field name="cliente_ids"/> -->
                     <field name="detalle_cobro"/>
                     <field name="costo" sum='Total'/>
                 </tree>
@@ -27,11 +26,10 @@
                         <group col="4">
                             <field name="fecha_cobro"/>
                             <field name="name"/>
-                            <!-- <field name="avance_id"/> -->
                         </group>
                         <Separator string="Detalle del Cobro"/>
                         <group>
-                            <!-- <field name="cliente_ids"/> -->
+                            <field name="cliente_id"/>
                             <field name="detalle_cobro"/>
                             <field name="costo"/>
                         </group>
