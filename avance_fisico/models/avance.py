@@ -14,7 +14,7 @@ class AvanceLicitacion(models.Model):
         cobro_ids = fields.One2many('avance_fisico.cobros', 'name',string='Cobro del avance')
 
         #relaciones out
-        licitacion_avance_id = fields.Many2one('obras.licitaciones', string='Obra')
+        #licitacion_avance_id = fields.Many2one('obras.licitaciones', string='Obra')
 
 class Cobros(models.Model):
     _name = 'avance_fisico.cobros'
