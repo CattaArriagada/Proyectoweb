@@ -26,7 +26,7 @@ class Cobros(models.Model):
     costo = fields.Integer(string='Costo')
 
     #relaciones out
-    avance_id = fields.Many2one('avance_fisico.avance_licitacion')
+    #avance_id = fields.Many2one('avance_fisico.avance_licitacion')
 
     #relaciones in
     cliente_ids = fields.Many2one('obras.clientes', string='Cliente Asociado')
