@@ -29,7 +29,6 @@
                         <group>
                             <field name="materiales_d_id" nolabel="1">
                                 <tree string="Materiales" editable="bottom">
-                                    <!-- <field name="codigo"/> -->
                                     <field name="name"/>
                                 </tree>
                             </field>
@@ -64,7 +63,6 @@
                 }
             </field>
         </record>
-        <!-- Prueba 2 -->
         <!-- Top menu item -->
         <menuitem name="Obras" id="obras.menu_root"/>
         <!-- actions -->
