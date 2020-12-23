@@ -24,13 +24,13 @@
           <sheet>
             <group col="4">
               <field name="name"/>
-              <!-- <field name="licitacion_id"/> -->
+              <field name="licitacion_id"/>
             </group>
             <group>
               <field name="observacion"/>
-              <!-- <field name="proveedor_ids"/> -->
+              <field name="proveedor_ids"/>
             </group>
-            <!-- <group>
+            <group>
               <field name="detalle_orden_ids" nolabel="1">
                 <tree string="Materiales" editable="bottom">
                   <field name="materiales_o_id" editable="bottom"/>
@@ -39,7 +39,7 @@
                   <field name="sub_total" sum='Total'/>
                 </tree>
               </field>
-            </group> -->
+            </group>
           </sheet>
         </form>
       </field>
