@@ -29,7 +29,6 @@
                             <field name="detalle"/>
                         </group>
                         <Separator string="Material"/>
-                        <group>
                         <!--<group>
                             <field name="detalle_presupuesto_material_ids" nolabel="1">
                                 <tree string="Materiales" editable="bottom">
