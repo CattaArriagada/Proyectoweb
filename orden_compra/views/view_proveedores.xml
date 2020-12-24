@@ -1,4 +1,4 @@
-<odoo>
+cd<odoo>
   <data>
     <!-- explicit list view definition -->
     <record model="ir.ui.view" id="orden_compra.proveedores_list">
