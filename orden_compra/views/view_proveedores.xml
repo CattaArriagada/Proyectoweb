@@ -22,11 +22,13 @@
         <field name="arch" type="xml">
             <form string="Proveedor">
                 <sheet>
+                <Separator string="General"/>
                 <group col="4">
                     <field name="name"/>
                     <field name="nombre"/>
                     <field name="rut"/>
                 </group>
+                <Separator string="Datos"/>
                 <group>                   
                     <field name="telefono"/>
                     <field name="correo"/>
