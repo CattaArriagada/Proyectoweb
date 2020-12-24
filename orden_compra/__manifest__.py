@@ -26,7 +26,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/view_orden_compra.xml',
-        'views/view_detalle_orden.xml',
+        #'views/view_detalle_orden.xml',
         'views/view_proveedores.xml',
     ],
 }
