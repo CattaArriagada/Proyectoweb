@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "orden_compra",
+    'name': "Modulo Orden Compra",
 
     'summary': """
         Orden compra, Detalle orden, Proveedores""",
