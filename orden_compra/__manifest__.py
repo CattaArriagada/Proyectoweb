@@ -10,8 +10,8 @@
         agregar, crear, ademas de integrar materiales desde el modulo de obras que contiene mas de 1000 materiales.
     """,
 
-    'author': "Alvaro Caceres",
-    'website': "http://www.ContructoraCallecita.com",
+    'author': "Alvaro Caceres Leiva",
+    'website': "http://www.ContructoraLaCallecita.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
