@@ -31,7 +31,7 @@
                 </group>
                 <Separator string="Presupuesto y observación de la obra"/>
                 <group>                   
-                    <field name="presupuesto_id"/>
+                    <!-- <field name="presupuesto_id"/> -->
                     <field name="detalleObra"/>
                     <!-- <field name="orden_compra_ids"/> -->
                 </group>

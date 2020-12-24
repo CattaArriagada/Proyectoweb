@@ -29,7 +29,11 @@
                             <field name="detalle"/>
                         </group>
                         <Separator string="Material"/>
+<<<<<<< HEAD
                         <group>
+=======
+                        <group>
+>>>>>>> 78af2ae239e8ec952135b61c63205fdc712be862
                             <field name="detalle_presupuesto_material_ids" nolabel="1">
                                 <tree string="Materiales" editable="bottom">
                                     <field name="materiales_d_id" editable="bottom"/>

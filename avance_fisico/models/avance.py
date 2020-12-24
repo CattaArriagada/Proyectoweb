@@ -11,7 +11,7 @@ class AvanceLicitacion(models.Model):
         observacion = fields.Text(string='Observacion')
         
         #relaciones in
-        cobro_ids = fields.One2many('avance_fisico.cobros', 'name',string='Cobro del avance')
+        #cobro_ids = fields.One2many('avance_fisico.cobros', 'name',string='Cobro del avance')
 
         #relaciones out
         #licitacion_avance_id = fields.Many2one('obras.licitaciones', string='Obra')
@@ -29,5 +29,5 @@ class Cobros(models.Model):
     #avance_id = fields.Many2one('avance_fisico.avance_licitacion')
 
     #relaciones in
-    cliente_id = fields.Many2one('obras.clientes', string='Cliente Asociado')
+    #cliente_id = fields.Many2one('obras.clientes', string='Cliente Asociado')
 
