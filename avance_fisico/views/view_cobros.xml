@@ -29,7 +29,7 @@
                         </group>
                         <Separator string="Detalle del Cobro"/>
                         <group>
-                            <!--field name="cliente_id"/-->
+                            <field name="cliente_id"/>
                             <field name="detalle_cobro"/>
                             <field name="costo"/>
                         </group>
