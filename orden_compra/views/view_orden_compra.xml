@@ -19,6 +19,7 @@
       <field name="arch" type="xml">
         <form string="Orden Compra">
           <sheet>
+          <Separator string="General"/>
             <group col="4">
               <field name="name"/>
               <field name="licitacion_id"/>
@@ -27,6 +28,7 @@
               <field name="observacion"/>
               <field name="proveedor_ids"/>
             </group>
+            <Separator string="Materiales"/>
             <group>
               <field name="detalle_orden_ids" nolabel="1">
                 <tree string="Materiales" editable="bottom">
