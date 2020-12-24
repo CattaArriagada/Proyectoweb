@@ -8,9 +8,7 @@
                 <tree>
                     <field name="name"/>
                     <field name="fecha"/>
-                    <!-- <field name="licitacion_ids"/> -->
                     <field name="detalle"/>
-                    <!-- <field name="total"/> -->
                 </tree>
             </field>
         </record>
@@ -29,7 +27,7 @@
                             <field name="detalle"/>
                         </group>
                         <Separator string="Material"/>
-                        <!--<group>
+                        <group>
                             <field name="detalle_presupuesto_material_ids" nolabel="1">
                                 <tree string="Materiales" editable="bottom">
                                     <field name="materiales_d_id" editable="bottom"/>
@@ -38,7 +36,7 @@
                                     <field name="sub_total" sum='Total'/>
                                 </tree>
                             </field>
-                        </group>-->
+                        </group>
                     </sheet>
                 </form>
             </field>
