@@ -24,7 +24,7 @@ class Cobros(models.Model):
 
         fecha_cobro = fields.Date('Fecha cobro')
         detalle_cobro = fields.Text('Detalle del Cobro')
-        costo = fields.Integer(string='Costo')
+        costo = fields.Integer(string='Costo', default=1)
 
         #relaciones out
         avance_id = fields.Many2one('avance_fisico.avance_licitacion')
