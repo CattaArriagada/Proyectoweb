@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class Presupuesto(models.Model):
@@ -19,8 +20,8 @@ class Detalle_presupuesto_materiales(models.Model):
 
         name =fields.Char(string='Detalle del presupuesto')
         
-        cost = fields.Float(string='Costo')
-        cantidad = fields.Integer(string='Cantidad solicitada')
+        cost = fields.Float(string='Costo',default=0)
+        cantidad = fields.Integer(string='Cantidad solicitada', default=1)
         sub_total = fields.Integer(string='Total', compute='_subtotal')
 
         @api.one
@@ -31,6 +32,18 @@ class Detalle_presupuesto_materiales(models.Model):
         presupuesto_d_id = fields.Many2one('obras.presupuesto')
         materiales_d_id = fields.Many2one('obras.materiales', string='Material')
 
+        #Validaciones
+        @api.onchange('cost')
+        @api.depends('cost')
+        def validar_cost(self):
+                if self.cost < 0:
+                        raise ValidationError("No puedes ingresar un costo negativo")
+
+        @api.onchange('cantidad')
+        @api.depends('cantidad')
+        def validar_cantidad(self):
+                if self.cantidad < 1:
+                        raise ValidationError("No puedes ingresar una cantidad negativa o un cero como cantidad")
 class Material(models.Model):
         _name = 'obras.materiales'
 
