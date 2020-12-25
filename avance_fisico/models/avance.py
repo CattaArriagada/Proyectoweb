@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class AvanceLicitacion(models.Model):
         _name = 'avance_fisico.avance_licitacion'
@@ -17,17 +18,24 @@ class AvanceLicitacion(models.Model):
         licitacion_avance_id = fields.Many2one('obras.licitaciones', string='Obra')
 
 class Cobros(models.Model):
-    _name = 'avance_fisico.cobros'
+        _name = 'avance_fisico.cobros'
 
-    name = fields.Char(string='Cobro', required=True)
+        name = fields.Char(string='Cobro', required=True)
 
-    fecha_cobro = fields.Date('Fecha cobro')
-    detalle_cobro = fields.Text('Detalle del Cobro')
-    costo = fields.Integer(string='Costo')
+        fecha_cobro = fields.Date('Fecha cobro')
+        detalle_cobro = fields.Text('Detalle del Cobro')
+        costo = fields.Integer(string='Costo')
 
-    #relaciones out
-    avance_id = fields.Many2one('avance_fisico.avance_licitacion')
+        #relaciones out
+        avance_id = fields.Many2one('avance_fisico.avance_licitacion')
 
-    #relaciones in
-    cliente_id = fields.Many2one('obras.clientes', string='Cliente Asociado')
+        #relaciones in
+        cliente_id = fields.Many2one('obras.clientes', string='Cliente Asociado')
+        
+        #Validacion
 
+        @api.onchange('costo')
+        @api.depends('costo')
+        def validar_costo(self):
+          if self.costo <= 0:
+                  raise ValidationError("No pude ser un valor menor que cero")
