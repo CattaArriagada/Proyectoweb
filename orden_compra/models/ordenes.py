@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class OrdenDeCompra(models.Model):
         _name = 'orden_compra.orden_compras'
@@ -22,8 +23,8 @@ class Detalle_Orden_Material(models.Model):
 
         name = fields.Char(string='Detalle orden')
 
-        cost = fields.Float(string='Costo')
-        cantidad = fields.Integer(string='Cantidad solicitada')
+        cost = fields.Float(string='Costo', default=0)
+        cantidad = fields.Integer(string='Cantidad solicitada', default =1)
         sub_total = fields.Integer(string='Total', compute='_subtotal')
 
         #relaciones out
@@ -34,6 +35,19 @@ class Detalle_Orden_Material(models.Model):
         @api.one
         def _subtotal(self):
                self.sub_total=self.cost*self.cantidad
+
+        #Validaciones
+        @api.onchange('cost')
+        @api.depends('cost')
+        def validar_cost(self):
+                if self.cost < 0:
+                        raise ValidationError("No puedes ingresar un costo negativo")
+
+        @api.onchange('cantidad')
+        @api.depends('cantidad')
+        def validar_cantidad(self):
+                if self.cantidad < 1:
+                        raise ValidationError("No puedes ingresar una cantidad negativa o un cero como cantidad")
 
 class Proveedores(models.Model):
         _name = 'orden_compra.proveedores'
